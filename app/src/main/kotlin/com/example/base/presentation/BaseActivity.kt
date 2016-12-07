@@ -1,23 +1,25 @@
 package com.example.base.presentation
 
 import android.os.Bundle
-import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import com.example.ExampleApplication
-import com.example.common.injection.component.AppComponent
 import com.example.common.injection.module.ActivityModule
 
 abstract class BaseActivity<View: BaseView, out Presenter : BasePresenter<View>> : AppCompatActivity() {
+
+    protected abstract val passiveView: View
+    protected abstract val presenter: Presenter
+    protected abstract val layoutResId: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // The activity is being created.
         super.onCreate(savedInstanceState)
 
-        setContentView(getLayoutResId())
+        setContentView(layoutResId)
 
         initInjection()
 
-        getPresenter().onViewAttached(getPassiveView())
+        presenter.onViewAttached(passiveView)
     }
 
     override fun onStart() {
@@ -43,22 +45,12 @@ abstract class BaseActivity<View: BaseView, out Presenter : BasePresenter<View>>
     override fun onDestroy() {
         // The activity is about to be destroyed.
         super.onDestroy()
-        getPresenter().onViewDetached()
+        presenter.onViewDetached()
     }
 
-    protected fun getAppComponent(): AppComponent {
-        return (application as ExampleApplication).appComponent
-    }
+    protected fun appComponent() = (application as ExampleApplication).appComponent
 
-    protected fun getActivityModule(): ActivityModule {
-        return ActivityModule(this)
-    }
-
-    @LayoutRes protected abstract fun getLayoutResId(): Int
-
-    protected abstract fun getPassiveView(): View
-
-    protected abstract fun getPresenter(): Presenter
+    protected fun activityModule() = ActivityModule(this)
 
     protected abstract fun initInjection()
 }
