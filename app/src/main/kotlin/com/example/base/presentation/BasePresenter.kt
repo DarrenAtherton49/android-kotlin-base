@@ -1,7 +1,5 @@
 package com.example.base.presentation
 
-import android.support.annotation.CallSuper
-
 abstract class BasePresenter<View: BaseView> {
 
     protected lateinit var view: View
@@ -9,13 +7,13 @@ abstract class BasePresenter<View: BaseView> {
     protected var isViewAttached = false
         private set
 
-    @CallSuper fun viewAttached(view: View) {
+    fun viewAttached(view: View) {
         this.view = view
         isViewAttached = true
         onViewAttached()
     }
 
-    @CallSuper fun viewDetached() {
+    fun viewDetached() {
         isViewAttached = false
         onViewDetached()
     }
