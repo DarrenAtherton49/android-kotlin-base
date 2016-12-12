@@ -19,7 +19,7 @@ abstract class BaseActivity<View: BaseView, out Presenter : BasePresenter<View>>
 
         initInjection()
 
-        presenter.onViewAttached(passiveView)
+        presenter.viewAttached(passiveView)
     }
 
     override fun onStart() {
@@ -45,7 +45,7 @@ abstract class BaseActivity<View: BaseView, out Presenter : BasePresenter<View>>
     override fun onDestroy() {
         // The activity is about to be destroyed.
         super.onDestroy()
-        presenter.onViewDetached()
+        presenter.viewDetached()
     }
 
     protected fun appComponent() = (application as ExampleApplication).appComponent

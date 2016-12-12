@@ -8,7 +8,11 @@ import javax.inject.Inject
 @PerScreen
 class MainPresenter @Inject constructor() : BasePresenter<MainPresenter.View>() {
 
-    override fun unsubscribe() {
+    override fun onViewAttached() {
+
+    }
+
+    override fun onViewDetached() {
 
     }
 

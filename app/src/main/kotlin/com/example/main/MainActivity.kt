@@ -17,9 +17,9 @@ class MainActivity : BaseActivity<MainPresenter.View, MainPresenter>(),
         MainPresenter.View {
 
     private lateinit var mainViewComponent: MainViewComponent
-    override val passiveView: MainPresenter.View = this
+    override val passiveView = this
     @Inject override lateinit var presenter: MainPresenter
-    @LayoutRes override val layoutResId: Int = R.layout.activity_main
+    @LayoutRes override val layoutResId = R.layout.activity_main
 
     //===================================================================================
     // Lifecycle methods and initialization

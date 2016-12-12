@@ -28,12 +28,12 @@ abstract class BaseFragment<View: BaseView, out Presenter : BasePresenter<View>>
 
     override fun onViewCreated(view: android.view.View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.onViewAttached(passiveView)
+        presenter.viewAttached(passiveView)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        presenter.onViewDetached()
+        presenter.viewDetached()
     }
 
     private val act = activity as AppCompatActivity
