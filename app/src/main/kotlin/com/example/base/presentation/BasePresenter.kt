@@ -4,6 +4,12 @@ abstract class BasePresenter<View: BaseView> {
 
     protected lateinit var view: View
 
+    inline protected fun performViewAction(action: View.() -> Unit) {
+        if (isViewAttached) {
+            view.action()
+        }
+    }
+
     protected var isViewAttached = false
         private set
 

@@ -17,7 +17,7 @@ class MainPresenter @Inject constructor() : BasePresenter<MainPresenter.View>() 
     }
 
     fun onButtonClicked() {
-        view.showMessage()
+        performViewAction { showMessage() }
     }
 
     interface View : BaseView {
