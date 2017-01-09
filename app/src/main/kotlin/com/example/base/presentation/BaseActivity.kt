@@ -44,8 +44,8 @@ abstract class BaseActivity<View: BaseView, out Presenter : BasePresenter<View>>
 
     override fun onDestroy() {
         // The activity is about to be destroyed.
-        super.onDestroy()
         presenter.viewDetached()
+        super.onDestroy()
     }
 
     protected fun appComponent() = (application as ExampleApplication).appComponent
