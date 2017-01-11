@@ -24,7 +24,7 @@ class AppModule(private val application: Application) {
         return PreferenceManager.getDefaultSharedPreferences(application)
     }
 
-    @Provides @Singleton internal fun provideUiThread(androidUiThread: AndroidUiExecutor): UiExecutor {
+    @Provides @Singleton internal fun provideUiThread(androidUiThread: AndroidUiThread): UiThread {
         return androidUiThread
     }
 
