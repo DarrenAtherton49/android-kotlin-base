@@ -1,30 +1,22 @@
 package com.example.base.domain
 
 import com.example.common.threading.BackgroundExecutor
-import com.example.common.threading.UiExecutor
+import com.example.common.threading.UiThread
 import rx.Observable
-import rx.subscriptions.Subscriptions
+import rx.Subscription
 
 abstract class ReactiveUseCase<ObservableType> (
-        private val uiExecutor: UiExecutor,
+        private val uiThread: UiThread,
         private val backgroundExecutor: BackgroundExecutor) {
-
-    private var subscription = Subscriptions.empty()
 
     protected fun executeUseCase(onNext: (ObservableType) -> Unit = {},
                                  onError: (Throwable) -> Unit = {},
-                                 onCompleted: () -> Unit = {}) {
-        this.subscription = useCaseObservable()
+                                 onCompleted: () -> Unit = {}): Subscription {
+        return useCaseObservable()
                 .subscribeOn(backgroundExecutor.scheduler)
-                .observeOn(uiExecutor.scheduler)
+                .observeOn(uiThread.scheduler)
                 .subscribe(onNext, onError, onCompleted)
     }
 
     protected abstract fun useCaseObservable(): Observable<ObservableType>
-
-    fun unsubscribe() {
-        if (!subscription.isUnsubscribed) {
-            subscription.unsubscribe()
-        }
-    }
 }
