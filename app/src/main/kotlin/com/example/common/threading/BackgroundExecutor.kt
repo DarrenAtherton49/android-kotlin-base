@@ -1,4 +1,4 @@
-package com.darrenatherton.droidcommunity.common.threading
+package com.example.common.threading
 
 import rx.Scheduler
 
