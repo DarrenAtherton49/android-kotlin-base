@@ -1,0 +1,3 @@
+package com.darrenatherton.droidcommunity.common.threading
+
+interface ComputationExecutor : BackgroundExecutor

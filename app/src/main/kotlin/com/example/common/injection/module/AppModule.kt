@@ -4,10 +4,9 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import com.example.common.threading.*
+import com.darrenatherton.droidcommunity.common.threading.*
 import dagger.Module
 import dagger.Provides
-import javax.inject.Named
 import javax.inject.Singleton
 
 /**
@@ -28,13 +27,13 @@ class AppModule(private val application: Application) {
         return androidUiThread
     }
 
-    @Provides @Singleton @Named("ioExecutor") internal fun provideIoExecutor(
-            rxIoExecutor: RxIoExecutor): BackgroundExecutor {
+    @Provides @Singleton internal fun provideIoExecutor(
+            rxIoExecutor: RxIoExecutor): IoExecutor {
         return rxIoExecutor
     }
 
-    @Provides @Singleton @Named("computationExecutor") internal fun provideComputationExecutor(
-            rxComputationThread: RxComputationExecutor): BackgroundExecutor {
-        return rxComputationThread
+    @Provides @Singleton internal fun provideComputationExecutor(
+            rxComputationExecutor: RxComputationExecutor): ComputationExecutor {
+        return rxComputationExecutor
     }
 }
