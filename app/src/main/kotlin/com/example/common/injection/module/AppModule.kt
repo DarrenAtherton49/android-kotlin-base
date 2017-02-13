@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import com.darrenatherton.droidcommunity.common.threading.*
+import com.example.common.threading.*
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
