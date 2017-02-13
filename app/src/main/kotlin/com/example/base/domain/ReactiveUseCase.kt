@@ -1,7 +1,7 @@
 package com.example.base.domain
 
-import com.example.common.threading.BackgroundExecutor
-import com.example.common.threading.UiThread
+import com.darrenatherton.droidcommunity.common.threading.BackgroundExecutor
+import com.darrenatherton.droidcommunity.common.threading.UiThread
 import rx.Observable
 import rx.Subscription
 
