@@ -1,0 +1,90 @@
+
+ext {
+
+    appConfig = [
+        applicationId:      "com.atherton.sample",
+        minSdkVersion:      21,
+        targetSdkVersion:   28,
+        compileSdkVersion:  28,
+        buildToolsVersion:  "28.0.3",
+        versionCode:        22,
+        versionName:        "0.0.1"
+    ]
+
+    // dependency versions
+    appCompatVersion = '1.1.0-rc01'
+    assertJVersion = '3.11.1'
+    constraintLayoutVersion = '2.0.0-alpha3'
+    daggerVersion = '2.24'
+    espressoVersion = '3.1.1'
+    espressoIdlingResourceVersion = '3.0.1'
+    glideVersion = '4.9.0'
+    junitVersion = '4.12'
+    leakCanaryVersion = '1.6.3'
+    lifecycleVersion = '2.1.0'
+    materialComponentsVersion = '1.1.0-beta01'
+    mockitoKotlinVersion = '2.2.0'
+    moshiVersion = '1.8.0'
+    navigationVersion = '2.1.0-alpha05'
+    okHttpVersion = '3.12.1'
+    paletteVersion = '1.0.0'
+    recyclerViewVersion = '1.1.0-alpha06'
+    retrofitVersion = '2.5.0'
+    roomVersion = '2.2.0-rc01'
+    roxieVersion = '0.4.0'
+    rulesVersion = '0.5'
+    runnerVersion = '0.5'
+    rxAndroidVersion = '2.1.1'
+    rxJavaVersion = '2.1.15'
+    rxKotlinVersion = '2.3.0'
+    rxRelayVersion = '2.1.0'
+    spekVersion = '2.0.9'
+    timberVersion = '4.7.1'
+
+
+    appDependencies = [
+        appCompat:                 "androidx.appcompat:appcompat:$appCompatVersion",
+        constraintLayout:          "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+        dagger:                    "com.google.dagger:dagger:$daggerVersion",
+        daggerCompiler:            "com.google.dagger:dagger-compiler:$daggerVersion",
+        glide:                     "com.github.bumptech.glide:glide:$glideVersion",
+        glideCompiler:             "com.github.bumptech.glide:compiler:$glideVersion",
+        kotlin:                    "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+        kotlinReflect:             "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
+        leakCanary:                "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion",
+        leakCanaryFragments:       "com.squareup.leakcanary:leakcanary-support-fragment:$leakCanaryVersion",
+        leakCanaryNoOp:            "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion",
+        lifecycleExtensions:       "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
+        materialComponents:        "com.google.android.material:material:$materialComponentsVersion",
+        moshi:                     "com.squareup.moshi:moshi:$moshiVersion",
+        moshiKotlin:               "com.squareup.moshi:moshi-kotlin:$moshiVersion",
+        navigationFragmentKTX:     "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+        navigationUiKTX:           "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+        okHttpLoggingInterceptor:  "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+        palette:                   "androidx.palette:palette:$paletteVersion",
+        recyclerView:              "androidx.recyclerview:recyclerview:$recyclerViewVersion",
+        retrofit:                  "com.squareup.retrofit2:retrofit:$retrofitVersion",
+        retrofitMoshiConverter:    "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
+        retrofitRxJava2Adapter:    "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+        roomCompiler:              "androidx.room:room-compiler:$roomVersion",
+        roomRuntime:               "androidx.room:room-runtime:$roomVersion",
+        roomRxJava2:               "androidx.room:room-rxjava2:$roomVersion",
+        roxie:                     "com.ww:roxie:$roxieVersion",
+        rxAndroid:                 "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+        rxJava2:                   "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+        rxKotlin:                  "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+        rxRelay:                   "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion",
+        timber:                    "com.jakewharton.timber:timber:$timberVersion"
+    ]
+
+
+    testDependencies = [
+        assertJ:                "org.assertj:assertj-core:$assertJVersion",
+        espressoContrib:        "androidx.test.espresso:espresso-contrib:$espressoVersion",
+        espressoCore:           "androidx.test.espresso:espresso-core:$espressoVersion",
+        junit:                  "junit:junit:$junitVersion",
+        mockitoKotlin:          "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+        spek2:                  "org.spekframework.spek2:spek-dsl-jvm:$spekVersion",
+        spek2Runner:            "org.spekframework.spek2:spek-runner-junit5:$spekVersion"
+    ]
+}

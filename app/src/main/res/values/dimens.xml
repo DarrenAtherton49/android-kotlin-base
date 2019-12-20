@@ -1,6 +1,14 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="keyline">8dp</dimen>
+    <dimen name="keyline_2x">16dp</dimen>
+    <dimen name="keyline_3x">24dp</dimen>
+    <dimen name="keyline_4x">32dp</dimen>
+    <dimen name="keyline_6x">48dp</dimen>
+    <dimen name="keyline_7x">56dp</dimen>
+    <dimen name="keyline_8x">64dp</dimen>
+
+    <!-- Common views -->
+    <dimen name="bottom_sheet_corner_radius">8dp</dimen>
+
 </resources>

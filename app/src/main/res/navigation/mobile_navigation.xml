@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobileNavigation"
+    app:startDestination="@id/fragmentOne">
+
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="com.atherton.sample.presentation.features.one.OneFragment"
+        android:label="@string/fragment_label_one"
+        tools:layout="@layout/fragment_one">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentTwo"
+        android:name="com.atherton.sample.presentation.features.two.TwoFragment"
+        android:label="@string/fragment_label_two"
+        tools:layout="@layout/fragment_two">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="com.atherton.sample.presentation.features.three.ThreeFragment"
+        android:label="@string/fragment_label_three"
+        tools:layout="@layout/fragment_three">
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.atherton.sample.presentation.features.settings.SettingsFragment"
+        android:label="@string/fragment_label_settings"
+        tools:layout="@layout/fragment_settings"/>
+
+    <fragment
+        android:id="@+id/licensesFragment"
+        android:name="com.atherton.sample.presentation.features.settings.licenses.LicensesFragment"
+        android:label="@string/fragment_label_licenses"
+        tools:layout="@layout/fragment_licenses"/>
+
+    <action
+        android:id="@+id/actionSharedGoToSettings"
+        app:destination="@+id/settingsFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+    <action
+        android:id="@+id/actionSharedGoToLicenses"
+        app:destination="@+id/licensesFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+</navigation>

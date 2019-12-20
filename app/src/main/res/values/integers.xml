@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- FragmentOne -->
+    <integer name="fragment_one_menu_order_search">0</integer>
+
+    <!-- FragmentTwo -->
+    <integer name="fragment_two_menu_order_search">0</integer>
+
+    <!-- FragmentThree -->
+    <integer name="fragment_three_menu_order_search">0</integer>
+
+    <!-- Common menu items -->
+    <integer name="common_menu_order_settings">100</integer>
+
+</resources>

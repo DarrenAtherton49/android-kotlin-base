@@ -1,33 +1,69 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "de.mannodermaus.android-junit5"
 
 android {
 
-    compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion rootProject.buildToolsVersion
+//    signingConfigs {
+//        SampleAppRelease {
+//            def keystorePropertiesFile = rootProject.file("keystore.properties")
+//            if (keystorePropertiesFile.exists()) {
+//                def keystoreProperties = new Properties()
+//                keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+//
+//                keyAlias keystoreProperties['keyAlias']
+//                keyPassword keystoreProperties['keyPassword']
+//                storeFile file(keystoreProperties['storeFile'])
+//                storePassword keystoreProperties['storePassword']
+//            }
+//        }
+//    }
+
+    def appConfig = rootProject.appConfig
+    compileSdkVersion appConfig.compileSdkVersion
+    buildToolsVersion appConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.example"
-        minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion rootProject.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        applicationId appConfig.applicationId
+        minSdkVersion appConfig.minSdkVersion
+        targetSdkVersion appConfig.targetSdkVersion
+        versionCode appConfig.versionCode
+        versionName appConfig.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        resConfigs "en"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                    "room.schemaLocation": "$projectDir/schemas".toString(),
+                    "room.incremental": "true"
+                ]
+            }
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.SampleAppRelease
         }
     }
 
-    // Always show the result of every unit test, even if it passes.
-    testOptions.unitTests.all {
-        testLogging {
-            events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+    testOptions {
+        junitPlatform {
+            filters {
+                engines {
+                    include 'spek2'
+                }
+            }
+        }
+        // Always show the result of every unit test, even if it passes.
+        unitTests.all {
+            testLogging.events = ["passed", "skipped", "failed", "standardOut", "standardError"]
         }
     }
 
@@ -35,59 +71,69 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
         androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
+androidExtensions {
+    experimental = true
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    def dependencies = rootProject.appDependencies
+    def testDependencies = rootProject.testDependencies
+    implementation dependencies.appCompat
+    implementation dependencies.constraintLayout
+    implementation dependencies.dagger
+    implementation dependencies.glide
+    implementation dependencies.kotlin
+    implementation dependencies.kotlinReflect
+    implementation dependencies.lifecycleExtensions
+    implementation dependencies.materialComponents
+    implementation dependencies.moshi
+    implementation dependencies.moshiKotlin
+    implementation dependencies.navigationFragmentKTX
+    implementation dependencies.navigationUiKTX
+    implementation dependencies.okHttpLoggingInterceptor
+    implementation dependencies.palette
+    implementation dependencies.recyclerView
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitMoshiConverter
+    implementation dependencies.retrofitRxJava2Adapter
+    implementation dependencies.roomRuntime
+    implementation dependencies.roomRxJava2
+    implementation dependencies.roxie
+    implementation dependencies.rxAndroid
+    implementation dependencies.rxJava2
+    implementation dependencies.rxKotlin
+    implementation dependencies.rxRelay
+    implementation dependencies.timber
 
-    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
-    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
-    compile "com.android.support:design:$rootProject.supportLibraryVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
-    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    kapt dependencies.daggerCompiler
+    kapt dependencies.glideCompiler
+    kapt dependencies.roomCompiler
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlinVersion"
+    debugImplementation dependencies.leakCanary
+    debugImplementation dependencies.leakCanaryFragments
+    releaseImplementation dependencies.leakCanaryNoOp
 
-    compile "io.reactivex:rxjava:$rootProject.rxJavaVersion"
-    compile "io.reactivex:rxandroid:$rootProject.rxAndroidVersion"
-
-    //compile "com.google.code.gson:gson:$rootProject.gsonVersion"
-    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
-    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
-    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
-    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
-
-    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
-    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
-    provided "org.glassfish:javax.annotation:10.0-b28"
-
-    compile "com.android.support.test.espresso:espresso-idling-resource:$rootProject.espressoVersion"
-    testCompile "junit:junit:$rootProject.junitVersion"
-    testCompile "org.mockito:mockito-all:$rootProject.mockitoVersion"
-    testCompile "org.hamcrest:hamcrest-all:$rootProject.hamcrestVersion"
-    testCompile "org.powermock:powermock-module-junit4:$rootProject.powerMockito"
-    testCompile "org.powermock:powermock-api-mockito:$rootProject.powerMockito"
-
-    androidTestCompile "com.android.support.test:runner:$rootProject.runnerVersion"
-    androidTestCompile "com.android.support.test:rules:$rootProject.rulesVersion"
-    androidTestCompile("com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion", {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    androidTestCompile "com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion"
-    androidTestCompile "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
-}
-
-kapt {
-    generateStubs = true
-}
-
-/*
-Resolves dependency versions across test and production APKs, specifically, transitive
-dependencies. This is required since Espresso internally has a dependency on support-annotations.
-*/
-configurations.all {
-    resolutionStrategy.force "com.android.support:support-annotations:$supportLibraryVersion"
+    testImplementation testDependencies.assertJ
+    //testImplementation testDependencies.junit
+    testImplementation testDependencies.mockitoKotlin
+    testImplementation testDependencies.spek2
+    testRuntimeOnly testDependencies.spek2Runner
+    androidTestImplementation testDependencies.espressoCore
+    androidTestImplementation testDependencies.espressoContrib
 }
 
 /*

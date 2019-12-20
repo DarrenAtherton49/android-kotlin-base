@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+    <item
+        android:id="@+id/fragmentOne"
+        android:icon="@drawable/ic_tv_black_24dp"
+        android:title="@string/bottom_nav_one"/>
+
+    <item
+        android:id="@+id/fragmentTwo"
+        android:icon="@drawable/ic_movie_black_24dp"
+        android:title="@string/bottom_nav_two"/>
+
+    <item
+        android:id="@+id/fragmentThreww"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/bottom_nav_three"/>
+    -->
+
+</menu>

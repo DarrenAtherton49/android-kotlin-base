@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Contributors -->
+    <string name="license_contributor_android_open_source">The Android Open Source Project</string>
+    <string name="license_contributor_google_inc">Google, Inc.</string>
+    <string name="license_contributor_jetbrains">JetBrains</string>
+    <string name="license_contributor_square_inc">Square, Inc.</string>
+    <string name="license_contributor_ww_tech">WW International, Inc.</string>
+    <string name="license_contributor_rx_android_authors">The RxAndroid authors</string>
+    <string name="license_contributor_dagger_2_authors">The Dagger Authors</string>
+    <string name="license_contributor_rxjava_2_authors">RxJava Contributors</string>
+    <string name="license_contributor_netflix_and_jake_wharton">Netflix and Jake Wharton</string>
+    <string name="license_contributor_jake_wharton">Jake Wharton</string>
+
+    <string name="license_app_compat_name">AppCompat</string>
+    <string name="license_app_compat_description">A collection of helper libraries which provide a
+        consistent experience across all versions of android.</string>
+
+    <string name="license_constraint_layout_name">ConstraintLayout</string>
+    <string name="license_constraint_layout_description">A layout which allows you to create complex layouts
+        with a flat hierarchy.</string>
+    
+    <string name="license_dagger_2_name">Dagger 2</string>
+    <string name="license_dagger_2_description">A static, compile-time dependency injection framework for
+        Java and Android.</string>
+
+    <string name="license_dagger_2_compiler_name">Dagger 2 Compiler</string>
+    <string name="license_dagger_2_compiler_description">Activates code generation and generates implementations
+        to manage a Dagger 2 graph.</string>
+
+    <string name="license_glide_name">Glide</string>
+    <string name="license_glide_description">An image loading and caching library for Android focused on
+        smooth scrolling.</string>
+
+    <string name="license_glide_compiler_name">Glide Compiler</string>
+    <string name="license_glide_compiler_description">An annotation processor for Glide.</string>
+
+    <string name="license_kotlin_name">Kotlin</string>
+    <string name="license_kotlin_description">An OSS statically typed programming language that targets the JVM,
+        Android, JavaScript and Native, supporting both functional and object-oriented styles of programming.</string>
+
+    <string name="license_kotlin_reflect_name">Kotlin Reflect</string>
+    <string name="license_kotlin_reflect_description">A JAR required by the Kotlin runtime component when
+        using reflection features on the Java platform.</string>
+
+    <string name="license_material_components_name">Material Design Components</string>
+    <string name="license_material_components_description">The components are a collection of widgets
+        which help developers execute Material Design.</string>
+
+    <string name="license_leak_canary_name">LeakCanary</string>
+    <string name="license_leak_canary_description">A memory leak detection library for Android and Java.</string>
+
+    <string name="license_leak_canary_fragment_name">LeakCanary Support Fragments</string>
+    <string name="license_leak_canary_fragment_description">Allows for LeakCanary to be used with the Android Support
+        Library Fragment.</string>
+
+    <string name="license_leak_canary_no_op_name">LeakCanary No Op</string>
+    <string name="license_leak_canary_no_op_description">Allows for LeakCanary to be used in release builds</string>
+
+    <string name="license_lifecycle_extensions_name">AndroidX Lifecycle Extensions</string>
+    <string name="license_lifecycle_extensions_description">A set of components which allows developers to write
+        code which is aware of and can change in response to the lifecycle of components such as Activity
+        and Fragment.</string>
+
+    <string name="license_lifecycle_compiler_name">AndroidX Lifecycle Compiler</string>
+    <string name="license_lifecycle_compiler_description">An annotation processor for the AndroidX Lifecycle
+        Extensions.</string>
+
+    <string name="license_moshi_name">Moshi</string>
+    <string name="license_moshi_description">A modern JSON library for Android and Java, making it easy to parse
+        JSON into Java objects and vice-versa.</string>
+
+    <string name="license_moshi_kotlin_name">Moshi-Kotlin</string>
+    <string name="license_moshi_kotlin_description">A kotlin-specific artifact for Moshi.</string>
+
+    <string name="license_navigation_fragment_ktx_name">Navigation Fragment KTX</string>
+    <string name="license_navigation_fragment_ktx_description">Kotlin Fragment extensions wrapper around the
+        Android navigation component, which allows developers to implement navigation via a modern API.</string>
+
+    <string name="license_navigation_ui_ktx_name">Navigation UI KTX</string>
+    <string name="license_navigation_ui_ktx_description">Kotlin UI extensions wrapper around the
+        Android navigation component, which allows developers to implement navigation via a modern API.</string>
+
+    <string name="license_ok_http_logging_interceptor_name">OKHTTP Logging Interceptor</string>
+    <string name="license_ok_http_logging_interceptor_description">An OkHttp interceptor which logs HTTP request
+        and response data.</string>
+
+    <string name="license_palette_name">Palette</string>
+    <string name="license_palette_description">A library for extracting colours from images.</string>
+
+    <string name="license_recycler_view_name">RecyclerView</string>
+    <string name="license_recycler_view_description">A flexible view for providing a limited window into
+        a large data set.</string>
+
+    <string name="license_retrofit_name">Retrofit</string>
+    <string name="license_retrofit_description">A type-safe HTTP client for Android and Java which turns
+        your HTTP API into a Java interface.</string>
+
+    <string name="license_retrofit_moshi_name">Retrofit Moshi</string>
+    <string name="license_retrofit_moshi_description">A Retrofit Converter which uses Moshi for serialization
+        to and from JSON.</string>
+
+    <string name="license_retrofit_rxjava_2_adapter_name">Retrofit RxJava 2 Adapter</string>
+    <string name="license_retrofit_rxjava_2_adapter_description">An RxJava 2 CallAdapter.Factory implementation
+        for Retrofit 2.</string>
+
+    <string name="license_room_runtime_name">Room</string>
+    <string name="license_room_runtime_description">Provides an abstraction layer over SQLite to allow fluent
+        database access while harnessing the full power of SQLite.</string>
+
+    <string name="license_room_compiler_name">Room Compiler</string>
+    <string name="license_room_compiler_description">An annotation processor for Room.</string>
+
+    <string name="license_room_rxjava2_name">Room RxJava2</string>
+    <string name="license_room_rxjava2_description">RxJava 2 bindings for Room.</string>
+
+    <string name="license_roxie_name">Roxie</string>
+    <string name="license_roxie_description">A lightweight Android library for building reactive apps by modelling
+        Unidrectional data flow.</string>
+
+    <string name="license_rx_android_name">RxAndroid</string>
+    <string name="license_rx_android_description">Android specific bindings for RxJava 2 providing a Scheduler that
+        schedules on the Android main thread.</string>
+
+    <string name="license_rxjava_2_name">RxJava 2</string>
+    <string name="license_rxjava_2_description">A library for composing asynchronous and event-based programs
+        using observable sequences for the Java VM.</string>
+
+    <string name="license_rxkotlin_name">RxKotlin</string>
+    <string name="license_rxkotlin_description">RxJava bindings for Kotlin - contains extension functions
+        which provide a more idiomatic Kotlin API for RxJava.</string>
+
+    <string name="license_rxrelay_name">RxRelay</string>
+    <string name="license_rxrelay_description">A set of RxJava types that are both an Observable
+        and a Consumer.</string>
+
+    <string name="license_timber_name">Timber</string>
+    <string name="license_timber_description">A logger with a small, extensible API which provides utility
+        on top of Android\'s normal Log class.</string>
+
+</resources>
