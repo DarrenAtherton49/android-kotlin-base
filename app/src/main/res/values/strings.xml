@@ -37,8 +37,6 @@
     <!-- LicensesFragment -->
     <string name="licenses_view_license">View License</string>
 
-    <string name="new_list_created_action">See list</string>
-
     <!-- Error messages -->
     <string name="error_message_generic">SampleApp encountered an error, please try again later</string>
     <string name="error_message_server">Server encountered a %$d error, please try again later</string>

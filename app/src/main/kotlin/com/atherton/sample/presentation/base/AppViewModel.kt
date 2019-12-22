@@ -15,14 +15,5 @@ abstract class AppViewModel<Action : BaseAction, State : BaseState, ViewEffect :
 
     protected inline fun viewEffect(viewEffect: () -> ViewEffect) {
         viewEffects.accept(viewEffect.invoke())
-
-        val v = viewEffect.invoke()
-        if (v is NavigationViewEffect) {
-            v.hi()
-        }
     }
-}
-
-interface NavigationViewEffect : BaseViewEffect {
-    fun hi()
 }
