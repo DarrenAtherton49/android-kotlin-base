@@ -275,6 +275,6 @@ internal fun generateLicenses(context: Context): List<License> {
             rxKotlin,
             rxRelay,
             timber
-        ).also { it.forEach { println(it.id) } }.sortedBy { it.name }
+        ).sortedBy { it.name }
     }
 }
