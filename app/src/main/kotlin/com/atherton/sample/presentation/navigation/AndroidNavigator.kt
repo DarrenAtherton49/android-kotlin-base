@@ -4,15 +4,16 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.navigation.NavController
+import com.atherton.sample.R
 
-class AndroidNavigator(private val navController: NavController, val context: Context) : Navigator {
+class AndroidNavigator(private val navController: NavController, private val context: Context) : Navigator {
 
     override fun showSettingsScreen() {
-        navController.navigate(com.atherton.sample.R.id.actionSharedGoToSettings)
+        navController.navigate(R.id.actionSharedGoToSettings)
     }
 
     override fun showLicensesScreen() {
-        navController.navigate(com.atherton.sample.R.id.actionSharedGoToLicenses)
+        navController.navigate(R.id.actionSharedGoToLicenses)
     }
 
     override fun showUrlInBrowser(url: String) {
