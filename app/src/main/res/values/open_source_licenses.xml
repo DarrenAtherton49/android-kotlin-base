@@ -12,6 +12,7 @@
     <string name="license_contributor_rxjava_2_authors">RxJava Contributors</string>
     <string name="license_contributor_netflix_and_jake_wharton">Netflix and Jake Wharton</string>
     <string name="license_contributor_jake_wharton">Jake Wharton</string>
+    <string name="license_contributor_lisa_wray">Lisa Wray</string>
 
     <string name="license_app_compat_name">AppCompat</string>
     <string name="license_app_compat_description">A collection of helper libraries which provide a
@@ -35,6 +36,9 @@
 
     <string name="license_glide_compiler_name">Glide Compiler</string>
     <string name="license_glide_compiler_description">An annotation processor for Glide.</string>
+
+    <string name="license_groupie_name">Groupie</string>
+    <string name="license_groupie_description">A simple, flexible library for complex RecyclerView layouts.</string>
 
     <string name="license_kotlin_name">Kotlin</string>
     <string name="license_kotlin_description">An OSS statically typed programming language that targets the JVM,

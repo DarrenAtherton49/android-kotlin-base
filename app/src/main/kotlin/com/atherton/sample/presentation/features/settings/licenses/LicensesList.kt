@@ -4,6 +4,7 @@ import android.content.Context
 import com.atherton.sample.R
 
 private const val APACHE_2_0_URL = "https://www.apache.org/licenses/LICENSE-2.0"
+private const val GROUPIE_LICENSE_URL = "https://github.com/lisawray/groupie/blob/master/LICENSE"
 private const val GLIDE_LICENSE_URL = "https://github.com/bumptech/glide/blob/master/LICENSE"
 
 internal fun generateLicenses(context: Context): List<License> {
@@ -50,6 +51,13 @@ internal fun generateLicenses(context: Context): List<License> {
             contributor = getString(R.string.license_contributor_google_inc),
             description = getString(R.string.license_glide_compiler_description),
             url = GLIDE_LICENSE_URL
+        )
+        val groupie = License(
+            id = ++id,
+            name = getString(R.string.license_groupie_name),
+            contributor = getString(R.string.license_contributor_lisa_wray),
+            description = getString(R.string.license_groupie_description),
+            url = GROUPIE_LICENSE_URL
         )
         val kotlin = License(
             id = ++id,
@@ -248,6 +256,7 @@ internal fun generateLicenses(context: Context): List<License> {
             dagger2Compiler,
             glide,
             glideCompiler,
+            groupie,
             kotlin,
             kotlinReflect,
             materialComponents,

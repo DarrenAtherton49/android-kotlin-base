@@ -96,6 +96,7 @@ dependencies {
     implementation dependencies.constraintLayout
     implementation dependencies.dagger
     implementation dependencies.glide
+    implementation dependencies.groupie
     implementation dependencies.kotlin
     implementation dependencies.kotlinReflect
     implementation dependencies.lifecycleExtensions
