@@ -97,6 +97,7 @@ dependencies {
     implementation dependencies.dagger
     implementation dependencies.glide
     implementation dependencies.groupie
+    implementation dependencies.groupieKotlinExtensions
     implementation dependencies.kotlin
     implementation dependencies.kotlinReflect
     implementation dependencies.lifecycleExtensions
